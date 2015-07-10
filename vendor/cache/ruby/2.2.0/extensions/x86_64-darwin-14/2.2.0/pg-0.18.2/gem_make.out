@@ -1,4 +1,4 @@
-/usr/local/opt/ruby/bin/ruby -r ./siteconf20150709-4890-h9gsg0.rb extconf.rb
+/usr/local/opt/ruby/bin/ruby -r ./siteconf20150709-5412-1sqqcyd.rb extconf.rb
 checking for pg_config... no
 No pg_config... trying anyway. If building fails, please try again with
  --with-pg-config=/path/to/pg_config
