@@ -1,6 +1,11 @@
-<p id="notice"><%= notice %></p>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
-<h1>Listing Stores</h1>
+<div class="jumbotron">
+  <h2>The best way to find great area marijuana retail stores</h2>
+  <h3>Explore favorite retail stores, smoke shops, and dispensaries in your area.<br>
+    Leave reviews and ratings for your fellow cannabis lovers</h3>
+</div>
 
 <table class="table table-hover table-condensed">
   <thead>
@@ -28,6 +33,14 @@
   </tbody>
 </table>
 
-<br>
+
 
 <%= link_to 'New Store', new_store_path, class: "btn btn-link"  %>
+<br>
+<br>
+
+<div align="center">
+<%= image_tag "https://s3.amazonaws.com/seattlecannabisguide/Seattle.jpg" %>
+</div>
+
+<br>
