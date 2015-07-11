@@ -16,6 +16,7 @@ gem 'pg', group: :production
 gem 'carrierwave'
 gem "fog"
 gem 'figaro', '~> 1.1.1' 
+gem "mini_magick"
 
 
 group :development, :test do
