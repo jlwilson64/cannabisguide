@@ -24,7 +24,7 @@
         <td><%= store.name %></td>
         <td><%= store.address %></td>
         <td><%= store.phone %></td>
-        <td><%= store.website %></td>
+        <td><%= link_to store.website, store.website, class: "btn btn-link" %></td>
         <td><%= link_to 'Show', store, class: "btn btn-link"  %></td>
         <td><%= link_to 'Edit', edit_store_path(store), class: "btn btn-link"  %></td>
         <td><%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link"  %></td>
