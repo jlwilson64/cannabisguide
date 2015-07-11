@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= image_tag @store.image_url %>
+
 <p>
   <strong>Name:</strong>
   <%= @store.name %>
@@ -17,8 +19,9 @@
 
 <p>
   <strong>Website:</strong>
-  <%= @store.website %>
+  <a href="<%= @store.website %>"><%= @store.website %></a>
 </p>
+
 
 <%= link_to 'Edit', edit_store_path(@store), class: "btn btn-link"  %> |
 <%= link_to 'Back', stores_path, class: "btn btn-link"  %>
