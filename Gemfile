@@ -18,6 +18,7 @@ gem "fog"
 gem 'figaro', '~> 1.1.1' 
 gem "mini_magick"
 gem 'devise'
+gem 'meta-tags'
 
 
 group :development, :test do
