@@ -1,10 +1,13 @@
 <% title @store.name %>
 
-<%= image_tag @store.image_url %>
+<div class="row">
+	<div class="col-md-4">
+		<%= image_tag @store.image_url %>
 <br><br>
 <p>
-  <strong>Name:</strong>
-  <%= @store.name %>
+  <h3>
+  	<%= @store.name %>
+  </h3>
 </p>
 
 <p>
@@ -23,6 +26,20 @@
 </p>
 
 <%= link_to 'Write a Review!', new_store_review_path(@store), class: "btn btn-primary" %>
+	</div>
+
+	<div class-"col-md-8">
+		<% if @reviews.blank? %>
+      		<h3>There are no reviews for this store.<br> Be the first to write a review!</h3>
+    	<% else %>
+      		<% @reviews.each do |review| %>
+        		<p><%= review.rating %></p>
+        		<p><%= review.comment %></p>
+      	<% end %>
+<% end %>
+	</div>
+</div>
+
 
 <%= link_to 'Edit', edit_store_path(@store), class: "btn btn-link"  %> |
 <%= link_to 'Back', stores_path, class: "btn btn-link"  %>
