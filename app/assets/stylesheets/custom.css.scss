@@ -1,9 +1,17 @@
 .jumbotron {
 	background-color: #fff1cc;
+	background-image: url("https://s3.amazonaws.com/seattlecannabisguide/jumbotron-cannaleaf-bg.png");
+	background-repeat: no-repeat;
+	background-position: right bottom;
 	border: 1px solid #f6921c;
 	h2 {
 		color: #394730;
 		font-weight: bold;
+		text-shadow: 1px 1px #ffffff;
+	}
+	h3 {
+		color: #394730;
+		text-shadow: 1px 1px #ffffff;
 	}
 }
 
