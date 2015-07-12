@@ -56,6 +56,12 @@
       					  <td>
      					     <div class="star-rating" data-score= <%= review.rating %> ></div>
       					    <p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
+                      <% if user_signed_in? %>
+                        <% if (review.user == current_user) || (current_user.admin?) %>
+                          <%= link_to "Edit", edit_store_review_path(@store, review) %>
+                          <%= link_to "Delete", store_review_path(@store, review), method: :delete %>
+                         <% end %>
+                     <% end %>
       					  </td>
      				 </tr>
   				  <% end %>
