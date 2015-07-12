@@ -8,6 +8,8 @@
   <h3>
   	<%= @store.name %>
   </h3>
+  <div class="star-rating" data-score= <%= @avg_rating %> ></div>
+  <p><%= "#{@reviews.length} reviews" %></p>
 </p>
 
 <p>
@@ -32,11 +34,21 @@
 		<% if @reviews.blank? %>
       		<h3>There are no reviews for this store.<br> Be the first to write a review!</h3>
     	<% else %>
-      		<% @reviews.each do |review| %>
-        		<div class="star-rating" data-score= <%= review.rating %> ></div>
-        		<p><%= review.comment %></p>
-      	<% end %>
-<% end %>
+    	<div class="table-responsive">
+    		<table class="table table-condensed">
+  				<tbody>
+  				  <% @reviews.each do |review| %>
+    				  <tr>
+      					  <td>
+     					     <div class="star-rating" data-score= <%= review.rating %> ></div>
+      					    <p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
+      					  </td>
+     				 </tr>
+  				  <% end %>
+ 				 </tbody>
+			</table>
+		</div>
+		<% end %>
 	</div>
 </div>
 
