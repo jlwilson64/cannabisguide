@@ -33,7 +33,7 @@
       		<h3>There are no reviews for this store.<br> Be the first to write a review!</h3>
     	<% else %>
       		<% @reviews.each do |review| %>
-        		<p><%= review.rating %></p>
+        		<div class="star-rating" data-score= <%= review.rating %> ></div>
         		<p><%= review.comment %></p>
       	<% end %>
 <% end %>
@@ -43,3 +43,13 @@
 
 <%= link_to 'Edit', edit_store_path(@store), class: "btn btn-link"  %> |
 <%= link_to 'Back', stores_path, class: "btn btn-link"  %>
+
+<script>
+  $('.star-rating').raty({
+    path: 'https://s3.amazonaws.com/seattlecannabisguide/stars/',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });
+</script>
