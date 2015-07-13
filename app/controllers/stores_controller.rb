@@ -1,7 +1,15 @@
 class StoresController < ApplicationController
   before_action :set_store, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :check_user, except: [:index, :show]
+  before_action :authenticate_user!, except: [:search, :index, :show]
+  before_action :check_user, except: [:search, :index, :show]
+
+  def search
+  if params[:search].present?
+    @stores = Store.search(params[:search])
+  else
+    @stores = Store.all
+  end
+end
 
   # GET /stores
   # GET /stores.json

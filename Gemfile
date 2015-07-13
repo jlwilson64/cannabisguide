@@ -19,6 +19,8 @@ gem 'figaro', '~> 1.1.1'
 gem "mini_magick"
 gem 'devise'
 gem 'meta-tags'
+gem 'searchkick'
+
 
 
 group :development, :test do
